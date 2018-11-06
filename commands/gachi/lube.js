@@ -1,19 +1,19 @@
 const commando = require("discord.js-commando");
 const gachiData = require("./gachiData")
+const name = "lube";
 
 class LubeCommand extends commando.Command {
   constructor(client) {
     super(client, {
       ...gachiData.baseOptions,
-      name: "lube",
-      memberName: "lube",
+      name,
+      memberName: name,
       description: "When the going gets rough."
     })
   }
 
   async run(message) {
-    const url = gachiData.getUrl("lube")
-    gachiData.runGachiCommand(message, url);
+    gachiData.runGachiCommand(message, name);
   }
 }
 

@@ -1,19 +1,19 @@
 const commando = require("discord.js-commando");
 const gachiData = require("./gachiData");
+const name = "fuckyou";
 
 class FuckYouCommand extends commando.Command {
   constructor(client) {
     super(client, {
       ...gachiData.baseOptions,
-      name: "fuckyou",
-      memberName: "fuckyou",
+      name,
+      memberName: name,
       description: "Describes itself."
     });
   }
 
   async run(message) {
-    const url = gachiData.getUrl("fuck you")
-    gachiData.runGachiCommand(message, url);
+    gachiData.runGachiCommand(message, name);
   }
 }
 

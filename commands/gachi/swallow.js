@@ -1,19 +1,19 @@
 const commando = require("discord.js-commando");
 const gachiData = require("./gachiData")
+const name = "swallow";
 
 class SwallowCommand extends commando.Command {
   constructor(client) {
     super(client, {
       ...gachiData.baseOptions,
-      name: "swallow",
-      memberName: "swallow",
-      description: "Van asking for a basic action."
+      name,
+      memberName: name,
+      description: "Van isn't asking for much, it should be expected."
     })
   }
 
   async run(message) {
-    const url = gachiData.getUrl("swallow")
-    gachiData.runGachiCommand(message, url);
+    gachiData.runGachiCommand(message, name);
   }
 }
 

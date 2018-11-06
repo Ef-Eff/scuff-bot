@@ -1,15 +1,15 @@
 const commando = require("discord.js-commando");
-const gachiData = require("./gachiData")
-const name = "suction";
+const gachiData = require("./gachiData");
+const name = "turn";
 
-class SuctionCommand extends commando.Command {
+class TurnCommand extends commando.Command {
   constructor(client) {
     super(client, {
       ...gachiData.baseOptions,
       name,
       memberName: name,
-      description: "An important concept for all gay men to learn."
-    })
+      description: "MRW I see a Nissan GTR."
+    });
   }
 
   async run(message) {
@@ -17,4 +17,4 @@ class SuctionCommand extends commando.Command {
   }
 }
 
-module.exports = SuctionCommand;
+module.exports = TurnCommand
