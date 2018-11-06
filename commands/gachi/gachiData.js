@@ -1,3 +1,5 @@
+const path = require("path");
+
 module.exports = {
   async runGachiCommand(message, name) {
     if (message.guild.voiceConnection) {
@@ -13,9 +15,8 @@ module.exports = {
       message.guild.voiceConnection.disconnect();
     });
   },
-  baseUrl: __dirname + "/sounds/",
   getUrl(str) {
-    return this.baseUrl + str + ".mp3";
+    return path.join(__dirname, "sounds", str + ".mp3");
   },
   baseOptions: {
     name: "",
